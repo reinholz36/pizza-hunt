@@ -100,7 +100,6 @@ function printReply(reply) {
 `;
 }
 
-// POST request for new comment
 function handleNewCommentSubmit(event) {
   event.preventDefault();
 
@@ -114,7 +113,7 @@ function handleNewCommentSubmit(event) {
   const formData = { commentBody, writtenBy };
 
   fetch(`/api/comments/${pizzaId}`, {
-    method: 'POST', 
+    method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json'
@@ -129,7 +128,7 @@ function handleNewCommentSubmit(event) {
     })
     .then(commentResponse => {
       console.log(commentResponse);
-      location.reload();
+      // location.reload();
     })
     .catch(err => {
       console.log(err);
